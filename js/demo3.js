@@ -1,11 +1,5 @@
 const s = (p) => {
-  let demo3Shader, img, fft, audio, toggleBtn;
-
-  let mic;
-  let spectrumX = 0;
-  let spectrumY = 0;
-  let spectrumSpeed = 2;
-  let skyLayer;
+  let demo3Shader, img, fft, audio, toggleBtn, amp;
 
   p.preload = () => {
     audio = p.loadSound("audio/Moonlight_prsmnl.mp3");
@@ -30,6 +24,8 @@ const s = (p) => {
     });
 
     fft = new p5.FFT();
+    amp = new p5.Amplitude();
+
     p.shader(demo3Shader);
     demo3Shader.setUniform("u_resolution", [p.windowWidth, p.windowHeight]);
     demo3Shader.setUniform("u_texture", img);
@@ -53,6 +49,10 @@ const s = (p) => {
     demo3Shader.setUniform("u_mid", mapMid);
 
     p.rect(0, 0, p.width, p.height);
+    let level = amp.getLevel();
+    console.log(level);
+    // p.background(0, 30);
+    // p.ellipse(p.width / 2, p.height / 2, 1, 1);
   };
 
   p.windowResized = () => {

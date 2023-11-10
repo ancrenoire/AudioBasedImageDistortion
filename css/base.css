@@ -245,7 +245,8 @@ a:focus {
 }
 
 .start-anim .intro {
-	animation: fadeOut 1s var(--anim-time-total) linear forwards;
+	display: none;
+	/* animation: fadeOut 1s var(--anim-time-total) linear forwards; */
 }
 
 @keyframes fadeOut {
@@ -277,11 +278,11 @@ a:focus {
 }
 
 .start-anim .intro__content {
-	animation: fadeInOut var(--anim-time) var(--anim-delay-first) linear forwards;
+	/* animation: fadeInOut var(--anim-time) var(--anim-delay-first) linear forwards; */
 }
 
 .start-anim .intro__content:nth-child(2) {
-	animation-delay: var(--anim-delay-second);
+	/* animation-delay: var(--anim-delay-second); */
 }
 
 @keyframes fadeInOut {
@@ -343,4 +344,11 @@ a:focus {
 	.content__title {
 		font-size: 8.75vw;
 	}
+}
+
+.content{
+	display: none;
+}
+.frame{
+	display: none;
 }
